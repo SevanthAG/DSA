@@ -11,10 +11,24 @@ public class Count_Numbers {
 
         long N = sc.nextLong();
         for (int i = 0; i < N; i++) {
-            long elements = sc.nextLong();
+            long inputN = sc.nextLong();
+
+            if ( inputN < 0) {
+                Negative++;
+            }
+            if (inputN > 0) {
+                Positive++;
+            }
+            if (inputN % 2 == 0) {
+                Even++;
+            } else {
+                Odd++;
+            }
         }
-
-            
-
+        System.out.println(Positive);
+        System.out.println(Negative);
+        System.out.println(Even);
+        System.out.println(Odd);
+        sc.close();
     }
 }
