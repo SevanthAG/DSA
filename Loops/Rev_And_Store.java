@@ -1,17 +1,17 @@
 import java.util.Scanner;
 
-public class Print_Number_in_Rev {
+public class Rev_And_Store {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         long N = sc.nextLong();
-        if (N == 0){
-            System.out.println(0);
-        }
+
+        long reversed = 0;
         while (N != 0) {
-            System.out.print(N % 10);
-            N = N / 10;
+            reversed = (reversed * 10) + (N % 10);
+            N = N / 10;  
         }
+        System.out.println(reversed);
         sc.close();
     }
 }
