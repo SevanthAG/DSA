@@ -11,7 +11,7 @@ public class Hollow_Square {
                 if (i == 1 || i == n || j == 1 || j == n) {
                     System.out.print("*");
                 } else {
-                    System.err.print(" ");
+                    System.out.print(" ");
                 }
             }
             System.out.println();            
