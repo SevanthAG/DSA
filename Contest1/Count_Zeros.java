@@ -8,6 +8,10 @@ public class Count_Zeros {
 
         int count = 0;
 
+        if (N == 0) {
+            count = 1;
+        }
+
         while (N != 0) {
             if (N%10 == 0) {
                 count++;
