@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Second_Last__Digit {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         long N = sc.nextLong();
+        sc.close();
         
         int count = 1;
         while (N != 0) {
@@ -15,6 +15,5 @@ public class Second_Last__Digit {
             N = N/10;
             count++;
         }
-        sc.close();
     }
 }
