@@ -1,25 +1,23 @@
 import java.util.Scanner;
 
-public class maxEle_with_position {
+public class Count_Occurance {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int n = sc.nextInt();
+        int x = sc.nextInt();
 
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        long max = a[0];
-        long pos = 1;
 
-        for (int i = 1; i < n; i++) {
-            if (a[i] > max) {
-                max = a[i];
-                pos = i + 1;
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] == x) {
+                count++;
             }
         }
-        System.out.print(max + " " + pos);
+        System.out.println(count);
         sc.close();
     }
 }
