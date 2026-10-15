@@ -16,24 +16,28 @@ public class BoundryII {
             }
         }
 // top
-        for (int j = 0; j < m; j++) {
+        for (int j = 0; j <= m-1; j++) {
             System.out.print(arr[0][j] + " ");
         }
 
         // left end
-        for (int i = 1; i < n; i++) {
-            System.out.print(arr[i][n - 1] + " ");
+        for (int i = 1; i <= n-1; i++) {
+            System.out.print(arr[i][m - 1] + " ");
         }
 
         // left to right
-        for (int j = m - 2; j >= 0; j--) {
-            System.out.print(arr[n - 1][j] + " ");
+        if(n > 1){
+            for (int j = m - 2; j >= 0; j--) {
+                System.out.print(arr[n - 1][j] + " ");
+            }
         }
 
         // Down to up
-        for (int i = n - 2; i > 0; i--) {
-            System.out.print(arr[i][0] + " ");
-        }
+        if(m > 1) {
+            for (int i = n - 2; i >= 1; i--) {
+                System.out.print(arr[i][0] + " ");
+            }
+            }
 
         sc.close();
     }
