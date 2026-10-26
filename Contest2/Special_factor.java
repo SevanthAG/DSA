@@ -20,5 +20,6 @@ public class Special_factor {
         if(flag == false){
             System.out.println("-1");
         }
+        sc.close();
     }
 }
