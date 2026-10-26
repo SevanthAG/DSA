@@ -1,11 +1,9 @@
 
-
-// Pending.................................................
 import java.util.Scanner;
 
 public class Intersection_to_arrays {
-    
-    public static void  solve(Scanner sc){
+
+    public static void solve(Scanner sc) {
         int n = sc.nextInt();
         int[] arr1 = new int[n];
 
@@ -21,16 +19,21 @@ public class Intersection_to_arrays {
         }
 
         for (int i = 0; i < n; i++) {
+            int count = 0;
             for (int j = 0; j < m; j++) {
-                if(arr1[i]==arr2[j]){
-                    System.out.print(arr1[i] + " ");
-                    break;
+                if (arr1[i] == arr2[j]) {
+                    count++;
                 }
+            }
+
+            if (count > 0) {
+                System.out.print(arr1[i] + " ");
             }
         }
         System.out.println("");
 
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
