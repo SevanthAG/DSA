@@ -17,21 +17,12 @@ public class Row_order {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int[][] arr = new int[n][m];
-
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < m; j++) {
-                arr[i][j] = Integer.parseInt(st.nextToken());
+                sb.append(Integer.parseInt(st.nextToken())).append(" ");
             }
         }
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                sb.append(arr[i][j]).append(" ");
-            }
-        }
-
         System.out.print(sb);
     }
 }

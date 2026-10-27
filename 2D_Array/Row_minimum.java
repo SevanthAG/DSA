@@ -1,29 +1,33 @@
-import java.util.Scanner;
 
-public  class Row_minimum {
-    public static void main(String[] args) {
-        Scanner sc =  new Scanner(System.in);
-        
-        int n = sc.nextInt();
-        int m  = sc.nextInt();
-        
-        int[][] arr = new int[n][m];
+    import java.io.BufferedReader;
+    import java.io.IOException;
+    import java.io.InputStreamReader;
+    import java.util.StringTokenizer;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m ; j++) {
-                arr[i][j] = sc.nextInt();
-            }
-        }
+    public class Row_minimum {
 
-        for (int i = 0; i < n; i++) {
-            int minimum = arr[i][0];
-            for (int j = 0; j < m; j++) {
-                if(arr[i][j] < minimum) {
-                    minimum = arr[i][j];
+        public static void main(String[] args) throws IOException {
+            StringBuilder sb = new  StringBuilder();
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(System.in)
+            );
+
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            int n = Integer.parseInt(st.nextToken());
+            int m = Integer.parseInt(st.nextToken());
+
+            for (int i = 0; i < n; i++) {
+                int minimum = Integer.MAX_VALUE;
+                st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < m; j++) {
+                    int box = Integer.parseInt(st.nextToken());
+                    if (box < minimum) {
+                        minimum = box;
+                    }
                 }
+                sb.append(minimum).append(" ");
             }
-            System.out.print(minimum + " ");
+            System.out.println(sb);
         }
-        sc.close();
     }
-}
