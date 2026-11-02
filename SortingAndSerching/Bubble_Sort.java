@@ -14,28 +14,27 @@ public class Bubble_Sort {
             arr[i] = sc.nextInt();
         }
 
+        int passCount = 1;
         for (int i = n - 1; i > 0; i--) {
-            int max = i;
             int swapCount = 0;
             for (int j = 0; j < i; j++) {
-                if (arr[j] > arr[max]) {
-                    max = j;
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                     swapCount++;
                 }
             }
-
-            int temp = arr[i];
-            arr[i] = arr[max];
-            arr[max] = temp;
-            System.out.println(swapCount);
+            StringBuilder sb = new StringBuilder();
+            for (int j = 0; j < n; j++) {
+                sb.append(arr[j]).append(" ");
+            }
+            System.out.println("Pass " + passCount + ": " + sb + " " + ", swaps = " + swapCount);
+            passCount++;
+            if (swapCount == 0) {
+                break;
+            }
         }
-
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < n; i++) {
-            sb.append(arr[i]).append(" ");
-        }
-
-        System.out.println(sb);
         sc.close();
     }
 }
