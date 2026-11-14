@@ -24,20 +24,34 @@ public class SpiralMatrix {
             }
         }
 
-        for (int j = 0; j < m; j++) {
-            System.out.print(a[0][j] + " ");
-        }
+        int startRow = 0;
+        int startCol = 0;
 
-        for (int i = 1; i < n; i++) {
-            System.out.print(a[i][m - 1] + " ");
-        }
+        int endRow = n;
+        int endCol = m;
 
-        for (int j = m - 2; j >= 0; j--) {
-            System.out.print(a[n - 1][j] + " ");
-        }
+        while (startRow < endRow && startCol < endCol) {
+            for (int j = startCol; j < endCol; j++) {
+                System.out.print(a[startRow][j] + " ");
+            }
 
-        for (int i = n - 2; i >= 1; i--) {
-            System.out.println(a[i][0]);
+            for (int i = startRow + 1; i < endRow; i++) {
+                System.out.print(a[i][endCol - 1] + " ");
+            }
+
+            for (int j = endCol - 2; j >= startCol; j--) {
+                System.out.print(a[endRow - 1][j] + " ");
+            }
+
+            for (int i = endRow - 2; i >= startRow + 1; i--) {
+                System.out.print(a[i][startCol] + " ");
+            }
+            startRow++;
+            startCol++;
+
+            endRow--;
+            endCol--;
+
         }
 
     }
