@@ -39,12 +39,16 @@ public class SpiralMatrix {
                 System.out.print(a[i][endCol - 1] + " ");
             }
 
-            for (int j = endCol - 2; j >= startCol; j--) {
-                System.out.print(a[endRow - 1][j] + " ");
+            if (startRow < endRow - 1) {
+                for (int j = endCol - 2; j >= startCol; j--) {
+                    System.out.print(a[endRow - 1][j] + " ");
+                }
             }
 
-            for (int i = endRow - 2; i >= startRow + 1; i--) {
-                System.out.print(a[i][startCol] + " ");
+            if (startCol < endCol - 1) {
+                for (int i = endRow - 2; i >= startRow + 1; i--) {
+                    System.out.print(a[i][startCol] + " ");
+                }
             }
             startRow++;
             startCol++;
